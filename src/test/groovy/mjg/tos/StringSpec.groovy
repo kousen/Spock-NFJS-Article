@@ -10,13 +10,11 @@ class StringSpec extends Specification {
     }
     
     def "LLaP has 21 characters"() {
-        expect:
-        s.size() == 21
+        expect: s.size() == 21
     }
     
     def "LLaP has 4 words"() {
-        expect:
-        s.split(/\W/).size() == 4
+        expect: s.split(/\W/).size() == 4
     }
     
     def "LLaP has 6 vowels"() {

@@ -13,8 +13,8 @@ class TribbleSpec extends Specification {
 
 		then:
 		result.size() == 11
-		result.each {
-			it instanceof Tribble
+		result.each { t ->
+			t instanceof Tribble
 		}
 	}
 
@@ -38,6 +38,8 @@ class TribbleSpec extends Specification {
 		then:
 		reaction == "wheep! wheep!"
 		1*koloth.annoy()
+        0*koloth.howlAtDeath()
+		// thrown(Exception)
 	}
 
 	def "number of tribbles in storage compartment"() {
@@ -45,7 +47,7 @@ class TribbleSpec extends Specification {
 		// ... implementation ...
 		and: "new generation every 12 hours over a period of three days"
 		// ... implementation ...
-		when: "tribbles get into storage compartments full of quadro-triticale"
+		when: "tribbles get into storage compartments full of quadrotriticale"
 		// invoke method
 		then: "compute number of tribbles"
 		// numTribbles == 1771561

@@ -3,12 +3,11 @@ apply plugin: "eclipse"
 
 repositories {
     mavenCentral()
-	mavenRepo urls: "http://m2repo.spockframework.org/snapshots"
 }
 
 dependencies {
-	groovy("org.codehaus.groovy:groovy-all:1.8.0")
-	testCompile "org.spockframework:spock-core:0.6-groovy-1.8-SNAPSHOT"
+	groovy "org.codehaus.groovy:groovy-all:1.8.0"
+	testCompile "org.spockframework:spock-core:0.5-groovy-1.8"
 }
 
 task wrapper(type: Wrapper) {

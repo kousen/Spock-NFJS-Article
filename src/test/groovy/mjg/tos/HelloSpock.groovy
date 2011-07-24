@@ -1,4 +1,6 @@
 package mjg.tos
+
+import spock.lang.Unroll;
 /*
  * Copyright 2009 the original author or authors.
  *
@@ -16,6 +18,7 @@ package mjg.tos
  */
 
 class HelloSpock extends spock.lang.Specification {
+    @Unroll({"$name should be $length"})
 	def "length of Spock's and his friends' names"() {
 		expect:
 		name.size() == length
