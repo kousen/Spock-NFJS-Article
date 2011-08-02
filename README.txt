@@ -9,7 +9,7 @@ script will download and install gradle and run all the tests.
 > gradle build -> download dependencies, build, and run all tests
 	then load build/reports/tests/index.html in browser
 	
-> gradlew build -> download and install gradle 1.0-milestone-3 and build
+> gradlew build -> download and install gradle 1.0-milestone-4 and build
 
 > gradle eclipse -> generate Eclipse project files
 

@@ -1,9 +1,8 @@
 package mjg.tos
 
-import spock.lang.Shared;
-import spock.lang.Specification;
-
 import static spock.util.matcher.HamcrestMatchers.closeTo
+import spock.lang.Shared
+import spock.lang.Specification
 
 class LibraryComputerSpec extends Specification {
 	@Shared LibraryComputer computer
@@ -15,7 +14,7 @@ class LibraryComputerSpec extends Specification {
 	
 	def "compute to the last decimal the value of PI"() {
 		expect: 
-		3.14159265 closeTo(computer.computePi(), 0.0001)
+        Math.abs(computer.computePi() - 3.1415926535) < 0.0001
 	}
 	
 	def "in the 60's, TV thought computers made typewriter noises"() {
