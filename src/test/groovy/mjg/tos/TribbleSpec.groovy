@@ -4,8 +4,6 @@ import spock.lang.Specification
 
 class TribbleSpec extends Specification {
     Tribble tribble = new Tribble()
-    def koloth = Mock(Klingon)
-    def spock = Mock(Vulcan)
 
     def "feed a tribble, get more tribbles"() {
         when:
@@ -19,6 +17,8 @@ class TribbleSpec extends Specification {
     }
 
     def "reacts well to Vulcans"() {
+        Vulcan spock = Mock()
+        
         when:
         String reaction = tribble.react(spock)
 
@@ -28,18 +28,18 @@ class TribbleSpec extends Specification {
     }
 
     def "reacts badly to Klingons"() {
-        koloth.annoy() >> {
+        Klingon koloth = Mock()
+        1 * koloth.annoy() >> {
             throw new Exception()
         }
-
+        0*koloth.howlAtDeath()
+        
         when:
         String reaction = tribble.react(koloth)
 
         then:
-        reaction == "wheep! wheep!"
-        1*koloth.annoy()
-        0*koloth.howlAtDeath()
-        notThrown(Exception)
+        reaction == null
+        thrown(Exception)
     }
     
     def "number of tribbles in storage compartment"() {

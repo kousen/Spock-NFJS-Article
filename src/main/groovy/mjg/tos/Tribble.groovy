@@ -3,7 +3,7 @@ package mjg.tos
 class Tribble {
     
     String react(Klingon klingon) {
-        klingon.annoy() 
+        println klingon.annoy()
         "wheep! wheep!" 
     }
 	

@@ -18,7 +18,7 @@ class QuoteSpec extends Specification {
 	
 	def "add a word increases total by 1"() {
 		when:
-		strings << '(raises eyebrow)'
+		strings << '(eyebrow)'
 		
 		then:
 		strings.size() == old(strings.size()) + 1

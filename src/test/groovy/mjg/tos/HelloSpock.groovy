@@ -26,13 +26,14 @@ class HelloSpock extends spock.lang.Specification {
 		where:
 		name     | length
 		"Spock"  | 5
-		"Kirk"   | 4
+		"Kirk"   | 5
 		"Scotty" | 6
 	}
 	
 	def "check lengths using arrays"() {
 		expect: name.size() == length
-		where:
+
+        where:
 		name << ["Spock","Kirk","Scotty"]
 		length << [5,4,6]
 	}
