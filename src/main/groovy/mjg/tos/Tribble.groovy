@@ -1,9 +1,11 @@
 package mjg.tos
 
+import mjg.tng.Klingon;
+
 class Tribble {
     
     String react(Klingon klingon) {
-        println klingon.annoy()
+        klingon.annoy()
         "wheep! wheep!" 
     }
 	

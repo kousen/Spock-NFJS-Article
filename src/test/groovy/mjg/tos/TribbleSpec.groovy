@@ -1,5 +1,6 @@
 package mjg.tos
 
+import mjg.tng.Klingon;
 import spock.lang.Specification
 
 class TribbleSpec extends Specification {
@@ -29,17 +30,17 @@ class TribbleSpec extends Specification {
 
     def "reacts badly to Klingons"() {
         Klingon koloth = Mock()
-        1 * koloth.annoy() >> {
-            throw new Exception()
-        }
-        0*koloth.howlAtDeath()
         
         when:
         String reaction = tribble.react(koloth)
 
         then:
+        1 * koloth.annoy() >> {
+            throw new Exception()
+        }
+        0 * koloth.howlAtDeath()
         reaction == null
-        thrown(Exception)
+        Exception e = thrown()
     }
     
     def "number of tribbles in storage compartment"() {
