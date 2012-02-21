@@ -3,7 +3,7 @@ package mjg
 import spock.lang.Specification;
 
 class PalindromeCheckerSpec extends Specification {
-    PalindromeChecker checker
+    PalindromeChecker checker = new PalindromeChecker()
     
     def palindromes = ['racecar',
         'Sex at noon taxes',
@@ -11,8 +11,6 @@ class PalindromeCheckerSpec extends Specification {
         'Flee to me, remote elf!',
         "Madam, in Eden, I'm Adam",
         "Go hang a salami; I'm a lasagna hog!"]
-    
-    def setup() { checker = new PalindromeChecker() }
     
     def "these are palindromes"() {
         expect: 
