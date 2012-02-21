@@ -19,7 +19,7 @@ class LibraryComputerSpec extends Specification {
 	
 	def "in the 60's, TV thought computers made typewriter noises"() {
 		expect: 
-		computer.makeTypewriterNoises() is("clickity-clickity-click")
+		computer.makeTypewriterNoises().is("clickity-clickity-click")
 	}
 	
 	def cleanupSpec() {
