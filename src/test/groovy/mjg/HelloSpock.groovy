@@ -19,7 +19,8 @@ import spock.lang.Unroll;
 
 class HelloSpock extends spock.lang.Specification {
     // @Unroll({"$name should be $length"})
-	def "length of Spock's and his friends' names"() {
+	@Unroll
+	def "#name should have #length"() {
 		expect:
 		name.size() == length
 

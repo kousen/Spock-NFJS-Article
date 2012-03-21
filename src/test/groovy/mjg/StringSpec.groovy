@@ -40,7 +40,7 @@ class StringSpec extends Specification {
         
 		then:
 		IndexOutOfBoundsException e = thrown()
-        assert e.message == 'String index out of range: 22'
+        e.message == 'String index out of range: 22'
 	}
 
 }
