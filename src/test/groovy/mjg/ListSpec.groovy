@@ -3,7 +3,11 @@ package mjg
 import spock.lang.Specification;
 
 class ListSpec extends Specification {
-    def strings = ['this','is','a','list','of','strings']
+    def strings
+    
+    def setup() {
+        strings = ['this','is','a','list','of','strings']
+    }
 
     def "there are six strings"() {
         expect: strings.size() == 6

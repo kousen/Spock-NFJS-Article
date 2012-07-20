@@ -9,12 +9,12 @@ class LibraryComputerSpec extends Specification {
 	
 	def setupSpec() { 
 		computer = new LibraryComputer() 
-		computer.start()
+		println computer.start()
 	}
 	
 	def "compute to the last decimal the value of PI"() {
 		expect: 
-        Math.abs(computer.computePi() - 3.1415926535) < 0.0001
+        (computer.computePi() - 3.1415926535).abs() < 0.0001
 	}
 	
 	def "in the 60's, TV thought computers made typewriter noises"() {
@@ -23,6 +23,6 @@ class LibraryComputerSpec extends Specification {
 	}
 	
 	def cleanupSpec() {
-		computer?.stop()
+		println computer?.stop()
 	}
 }

@@ -1,6 +1,7 @@
 package mjg
 
 import spock.lang.Specification;
+import spock.lang.Unroll;
 
 class PalindromeCheckerSpec extends Specification {
     PalindromeChecker checker = new PalindromeChecker()
@@ -12,9 +13,14 @@ class PalindromeCheckerSpec extends Specification {
         "Madam, in Eden, I'm Adam",
         "Go hang a salami; I'm a lasagna hog!"]
     
+//    def other() {
+//        expect: true
+//    }
+    
     def "these are palindromes"() {
-        expect: 
-        palindromes.each { checker.isPalindrome it }
+ 
+        expect:
+        palindromes.every { checker.isPalindrome(it) }
     }
     
     def "this is not a palindrome"() {

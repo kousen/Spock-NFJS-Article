@@ -21,8 +21,8 @@ class StringSpec extends Specification {
 	
     def "Access inside the string doesn't throw an exception"() {
         when:
-        llap[0..<llap.size()]  // forward
-        llap[-1..-llap.size()] // backward
+        llap[0..-1]  // forward
+        llap[-1..0] // backward
 
         then:
         notThrown(IndexOutOfBoundsException)
