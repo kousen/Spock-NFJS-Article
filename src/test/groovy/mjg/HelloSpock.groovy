@@ -16,7 +16,7 @@ import spock.lang.Unroll;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+//@Unroll
 class HelloSpock extends spock.lang.Specification {
     // @Unroll({"$name should be $length"})
 	@Unroll

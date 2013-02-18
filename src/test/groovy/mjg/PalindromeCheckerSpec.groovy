@@ -13,14 +13,10 @@ class PalindromeCheckerSpec extends Specification {
         "Madam, in Eden, I'm Adam",
         "Go hang a salami; I'm a lasagna hog!"]
     
-//    def other() {
-//        expect: true
-//    }
-    
     def "these are palindromes"() {
  
         expect:
-        palindromes.every { checker.isPalindrome(it) }
+        palindromes.every { str -> checker.isPalindrome(str) }
     }
     
     def "this is not a palindrome"() {
