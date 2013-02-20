@@ -20,7 +20,7 @@ class PalindromeCheckerSpec extends Specification {
     def "these are palindromes"() {
  
         expect:
-        palindromes.every { checker.isPalindrome(it) }
+        palindromes.every { str -> checker.isPalindrome(str) }
     }
     
     def "this is not a palindrome"() {
